@@ -5,6 +5,15 @@ body {
     color: #6e6666;
     text-align: center;
 
+
+    .nav-link {
+        color: rgb(0, 0, 0); /* Устанавливает цвет текста ссылок в черный */
+        text-decoration: none; /* Убирает подчеркивание ссылок */
+    }
+    .nav-link:hover {
+        text-decoration: underline; /* Добавляет подчеркивание при наведении */
+    }
+
     body {
         margin: 0;
         font-family: Arial, sans-serif;
@@ -160,7 +169,7 @@ h2 {
 
 .headers li {
     display:inline-block;
-    color: #020101;
+    color: #170202;
     opacity: 0.6;
     text-decoration: none;
     transition: all .07s ease-in-out;
