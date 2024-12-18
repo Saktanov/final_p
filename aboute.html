@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оставить отзыв</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .star {
+            font-size: 25px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .star:hover,
+        .star.active {
+            color: #f7b500;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .captcha {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .captcha img {
+            max-height: 40px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .note {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Оставить отзыв</h1>
+        <div class="rating">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+        <form>
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="E-mail" required>
+            <textarea placeholder="Введите текст отзыва..." rows="4" required></textarea>
+            <div class="captcha">
+                
+              
+            </div>
+            <button type="submit">Отправить отзыв</button>
+        </form>
+        <p class="note">Перед публикацией все отзывы проходят модерацию</p>
+    </div>
+    <script>
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                stars.forEach(s => s.classList.remove('active'));
+                star.classList.add('active');
+                const rating = star.getAttribute('data-value');
+                console.log('Оценка приложения:', rating);
+            });
+        });
+    </script>
+</body>
+</html>
